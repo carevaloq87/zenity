@@ -2,8 +2,6 @@
 
 This repo shows how to use Zenity to create interactive GUI in BASH
 
----
-
 ## Useful commands in Zenity
 
 ### Pop-up box with message
@@ -40,8 +38,6 @@ This repo shows how to use Zenity to create interactive GUI in BASH
 ### Select a Calendar Date
 
 `zenity --calendar`
-
----
 
 ## Useful commands in Bash
 
