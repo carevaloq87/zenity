@@ -1,0 +1,2 @@
+This is a message altered with >|
+This is a new line in the file

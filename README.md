@@ -56,3 +56,35 @@ This repo shows how to use Zenity to create interactive GUI in BASH
 ### Open a file in a preferred application
 
 `xdg-open "file://${VARIABLE_NAME}"`
+
+### Writing to a file
+
+- The `>` redirection operator writes the output to a given file. If the file exists, it is truncated to zero length. Otherwise, the file is created. Be extra careful when using this operator as you may overwrite an important file.
+- The `>>` redirection operator appends the output to a given file. The file is created if it does not exist.
+
+`echo "The message" > "text.txt"`
+`echo $VARIABLE > "text.txt"`
+
+To avoid overriding a file enable the "noclobber" option
+
+`set -o noclobber`
+`echo "The message" > "text.txt"`
+
+This should return the following output:
+
+`bash: text.txt: cannot overwrite existing file`
+
+- The `>|` operator allows you to override the Bash “noclobber” option:
+
+`echo "The message" >| text.txt`
+
+- The `>>` operator append the output to the end of the file, rather than overwriting the file:
+
+`echo "this is a line" >> file.txt`
+
+## Credits
+
+The following articles contributed to the content of this repository
+
+- <https://medium.com/swlh/how-to-modernize-your-bash-scripts-by-adding-gui-cba613a34cb7>
+- <https://linuxize.com/post/bash-write-to-file/>
